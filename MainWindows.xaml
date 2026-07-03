@@ -1,0 +1,40 @@
+﻿<Window x:Class="RevitPluginDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="工程量分析器" Height="450" Width="500"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="📊 工程量分析器" FontSize="20" FontWeight="Bold" Margin="0,0,0,15"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="统计维度：" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <ComboBox x:Name="cmbDimension" Width="200" SelectedIndex="0">
+                <ComboBoxItem Content="按构件类型"/>
+                <ComboBoxItem Content="按楼层"/>
+                <ComboBoxItem Content="按材质"/>
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,15">
+            <Button x:Name="btnStat" Content="📈 执行统计" Width="120" Height="30" Click="BtnStat_Click"/>
+            <Button x:Name="btnExport" Content="📤 导出Excel" Width="120" Height="30" Margin="10,0,0,0" Click="BtnExport_Click"/>
+        </StackPanel>
+
+        <TextBox Grid.Row="3" x:Name="txtResult" TextWrapping="Wrap" 
+                 VerticalScrollBarVisibility="Auto" 
+                 FontFamily="Consolas" FontSize="12"
+                 Background="#F5F5F5" Padding="10"
+                 Text="点击【执行统计】查看结果..."/>
+
+        <TextBlock Grid.Row="4" x:Name="txtStatus" Text="就绪" 
+                   Foreground="Gray" Margin="0,10,0,0"/>
+    </Grid>
+</Window>
