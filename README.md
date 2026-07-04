@@ -1,39 +1,32 @@
 # BIM Revit Plugin Portfolio
-Revit二次开发插件作品集 | C# | Revit API | BIM自动化
 
-## 🎯 项目概述
-我是BIM二次开发方向学习者，本仓库规划收录4套可独立运行的Revit插件，覆盖构件统计、工程量核算、土方计算、AI辅助审图四大工程高频场景，全部基于原生Revit API从零开发，无闭源第三方依赖，可作为学习案例与求职作品集。
+Revit 二次开发插件作品集 | C# | Revit API | WPF
+
+---
+
+## 📌 已完成的插件
+
+### 插件一：模型统计工具
+- 一键统计墙/门/窗的数量、面积、体积
+- 自动将 Revit 内部单位（平方英尺/立方英尺）转换为平方米/立方米
+- 导出 CSV 工程量清单到桌面
+- 技术点：FilteredElementCollector、BuiltInParameter、StreamWriter
+
+### 插件二：工程量分析器（WPF 界面版）
+- 支持按构件类型/按楼层/按材质三种维度统计
+- 统计结果在 WPF 界面中清晰展示
+- 一键导出 Excel（CSV 格式）
+- 技术点：WPF 界面、Linq 分组聚合（GroupBy）、MaterialId 反查材质名称
+
+---
 
 ## 🛠️ 技术栈
-- 开发语言：C# .NET Framework
-- 对接平台：Revit 202X API（兼容2020~2024多版本）
-- 配套工具：Visual Studio 2022、Git、ClosedXML（Excel导出）、DeepSeek API（AI审图接口）
 
-## 📦 插件列表
-### 1. 模型批量治理工具【✅ 已完成】
-- 功能：筛选统计墙、门窗、梁板等任意构件，批量提取数量、面积、体积参数，一键导出Excel工程量表
-- 核心技术点：FilteredElementCollector、参数读取、事务操作、ClosedXML报表生成
-- [查看源码](./01.ModelStatistics)
+- C# · .NET Framework
+- Revit API
+- WPF
+- Visual Studio
 
-### 2. 住宅工程量核算系统【⏳ 开发中】
-- 规划功能：区分土建/装修构件，自动匹配清单规则，生成造价统计报表
-- 核心技术点：构件分类过滤、单位换算、Excel批量输出
-- [查看源码](./02.QuantityTakeoff)
+---
 
-### 3. 场地土方量计算工具【⏳ 开发中】
-- 规划功能：读取地形曲面，自动计算挖方/填方量，生成场地平衡图表
-- 核心技术点：Revit地形API、几何曲面运算、体积算法
-- [查看源码](./03.EarthworkCalculator)
-
-### 4. AI辅助BIM审图插件【⏳ 开发中】
-- 规划功能：对接大模型API，自动识别图纸错漏碰缺、构件参数错误
-- 核心技术点：外部服务接口调用、Revit警告弹窗、文本解析
-- [查看源码](./04.AI_BIM_Assistant)
-
-## 📷 演示素材
-插件运行截图、操作动图统一存放于 `Docs` 文件夹，后续开发完成后补充。
-
-## 📝 本地运行部署
-1. 环境依赖：安装对应版本Revit + Revit SDK
-2. 编译：进入对应插件文件夹，用VS打开`.csproj`项目，修正Revit程序集引用路径
-3. 加载：编译生成`.addin`插件清单，放入Revit启动插件目录即可加载使用
+## 📂 仓库结构
